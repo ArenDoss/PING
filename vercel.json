@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/app.py", "use": "@vercel/python" },
+    { "src": "public/**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/ping", "methods": ["POST"], "dest": "api/app.py" },
+    { "src": "/pings", "methods": ["GET"], "dest": "api/app.py" },
+    { "src": "/(.*)",     "dest": "/public/$1" }
+  ]
+}

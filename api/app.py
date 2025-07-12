@@ -17,6 +17,3 @@ def get_pings():
     if subject:
         return jsonify([p for p in pings if p['subject'] == subject])
     return jsonify(pings)
-
-if __name__ == '__main__':
-    app.run(debug=True)
