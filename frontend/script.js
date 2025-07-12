@@ -31,6 +31,8 @@ document.querySelector('.ping-button-large').addEventListener('click', () => {
   });
 });
 
+let lastPingTimestamps = new Set();
+
 // Fetches all pings from backend and shows them
 function fetchPings() {
   fetch(`${API_URL}/pings`)
@@ -39,12 +41,24 @@ function fetchPings() {
       const area = document.querySelector('.info-area');
       area.innerHTML = '';
 
+      const newTimestamps = new Set();
+
       for (const p of data) {
+        const isNew = !lastPingTimestamps.has(p.timestamp);
+        newTimestamps.add(p.timestamp);
+
         const box = document.createElement('div');
-        box.className = 'info-box';
+        box.className = 'info-box' + (isNew ? ' new' : '');
         box.innerHTML = `<strong>${p.name}</strong> - ${p.subject} - Room ${p.room}<br>${p.description}`;
         area.appendChild(box);
+
+        if (isNew) {
+          setTimeout(() => box.classList.remove('new'), 300);
+        }
       }
+
+      // Update the last seen timestamps
+      lastPingTimestamps = newTimestamps;
     });
 }
 
