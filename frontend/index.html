@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ping Interface</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff0f5;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .form-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background-color: #ffe4ec;
+      padding: 30px 60px;
+      gap: 40px;
+    }
+
+    .form-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+      color: #ff5c8a;
+    }
+
+    input[type="text"],
+    select {
+      margin-top: 5px;
+      padding: 10px;
+      border: 2px solid #ffc0cb;
+      border-radius: 10px;
+      font-size: 14px;
+      background-color: #fff7fa;
+      height: 40px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    select {
+      height: 40px;
+    }
+
+    textarea {
+      margin-top: 5px;
+      padding: 10px;
+      border: 2px solid #ffc0cb;
+      border-radius: 10px;
+      font-size: 14px;
+      background-color: #fff7fa;
+      width: 100%;
+      height: 207.5px; /* matches 3x input box height */
+      box-sizing: border-box;
+      resize: none;
+    }
+
+    .ping-button-large {
+      background-color: #ff85a2;
+      color: white;
+      border: none;
+      border-radius: 40px;
+      padding: 30px 70px;     /* Bigger button body */
+      font-size: 28px;        /* Bigger text */
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      margin: 40px auto;
+    }
+
+    .ping-button-large:hover {
+      background-color: #ff638f;
+      transform: scale(1.07);
+    }
+
+    .info-area {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 20px 60px;
+      background-color: #fff7fa;
+    }
+
+    .info-box {
+      background-color: #ffc0cb;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-section">
+    <!-- Left Column -->
+    <div class="form-column">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+      </div>
+
+      <div class="form-group">
+        <label for="room">Room:</label>
+        <input type="text" id="room" placeholder="Enter room number">
+      </div>
+
+      <div class="form-group">
+        <label for="course">Course:</label>
+        <select id="course">
+          <option>N/A</option>
+          <option>COMP1511</option>
+          <option>COMP1531</option>
+          <option>COMP2521</option>
+          <option>MATH1020</option>
+          <option>PHYS1510</option>
+          <option>INFS1602</option>
+          <option>ACTL2131</option>
+          <option>COMM1190</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="form-column">
+      <div class="form-group" style="height: 100%;">
+        <label for="description">Description:</label>
+        <textarea id="description" placeholder="Enter description..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <button class="ping-button-large">PING</button>
+
+  <div class="info-area">
+    <!-- Scrollable info boxes -->
+    <div class="info-box"><strong>Alice</strong> - COMP1511 - Room 201<br>Debugging C programs.</div>
+    <div class="info-box"><strong>Bob</strong> - MATH1020 - Room 112<br>Studying calculus.</div>
+    <div class="info-box"><strong>Charlie</strong> - INFS1602 - Room 331<br>Working on ER diagrams.</div>
+    <div class="info-box"><strong>Dana</strong> - ACTL2131 - Room 204<br>Revising life insurance models.</div>
+    <div class="info-box"><strong>Ethan</strong> - PHYS1510 - Room 405<br>Practicing motion problems.</div>
+    <div class="info-box"><strong>Fiona</strong> - COMP2521 - Room 213<br>Doing graph traversal problems.</div>
+    <div class="info-box"><strong>George</strong> - COMM1190 - Room 124<br>Analyzing financial data.</div>
+    <div class="info-box"><strong>Hannah</strong> - COMP1531 - Room 321<br>Finalizing group project.</div>
+    <div class="info-box"><strong>Isabel</strong> - COMP1511 - Room 207<br>Studying structs and arrays.</div>
+    <div class="info-box"><strong>Jake</strong> - INFS1602 - Room 301<br>Designing a database schema.</div>
+  </div>
+
+</body>
+</html>
