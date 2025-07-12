@@ -1,7 +1,7 @@
 const API_URL = 'http://127.0.0.1:5000';
 
 // Triggered when user clicks the big "PING" button
-document.querySelector('.ping-button-large').addEventListener('click', () => {
+document.querySelector('.ping-image-button').addEventListener('click', () => {
   const name = document.getElementById('name').value;
   const room = document.getElementById('room').value;
   const course = document.getElementById('course').value;
