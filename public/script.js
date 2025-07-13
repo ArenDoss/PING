@@ -1,4 +1,4 @@
-const API_URL = 'https://ping-bqp5xs5mo-aren-doss-projects.vercel.app/';
+const API_URL = '';
 
 // Triggered when user clicks the big "PING" button
 document.querySelector('.ping-image-button').addEventListener('click', () => {

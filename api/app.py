@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from data import pings, add_ping
+from .data import pings, add_ping
 
 app = Flask(__name__)
 CORS(app)
@@ -17,3 +17,7 @@ def get_pings():
     if subject:
         return jsonify([p for p in pings if p['subject'] == subject])
     return jsonify(pings)
+
+if __name__ == '__main__':
+    # you can change host/port if you like
+    app.run(host='127.0.0.1', port=5000, debug=True)
