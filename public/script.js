@@ -53,6 +53,7 @@ function fetchPings() {
         area.appendChild(box);
 
         if (isNew) {
+          document.getElementById('pingSound').play();
           setTimeout(() => box.classList.remove('new'), 300);
         }
       }
